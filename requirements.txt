@@ -1,0 +1,4 @@
+celery==5.0.5
+redis==3.5.3
+requests==2.26.0
+flower==1.0.0
