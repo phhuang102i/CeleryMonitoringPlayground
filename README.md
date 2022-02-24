@@ -20,7 +20,7 @@ celery -A app worker --loglevel info -E
 
 celery -A app beat --loglevel info
 
-celery flower -A app --broker=redis://localhost:6379/0
+celery flower -A app --conf=celeryconfig.py
 
 ```
 
@@ -28,5 +28,13 @@ celery flower -A app --broker=redis://localhost:6379/0
 ```
 docker run --name Prometheus -d -v <absolute path>/prometheus.yml:/etc/prometheus/prometheus.yml -p 9090:9090 --network host prom/prometheus
 docker run --name Grafana -d -v grafana-storage:/var/lib/grafana -p 3000:3000 --network host grafana/grafana
+
+```
+
+## 5. go to localhost:3000
+```
+use prometheus as datasource(http://localhost:9090->save and test
+import, upload celery-monitoring-grafana-dashboard.json
+
 
 ```
